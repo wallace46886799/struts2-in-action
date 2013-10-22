@@ -1,0 +1,6 @@
+url=http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/login
+cookies=1
+cookie.0.name=JSESSIONID
+cookie.0.domain=localhost
+cookie.0.value=BCC0D84E088EE264041CF1B03A7FFC9A
+cookie.0.path=/struts2-demo-web-1.0-SNAPSHOT/

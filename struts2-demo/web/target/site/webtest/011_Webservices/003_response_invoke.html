@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/struts2-demo-web-1.0-SNAPSHOT/images/favicon.ico"/>
+    <title>CXF - Service list | AppFuse</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-2.2.1.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-responsive-2.2.1.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/style.css" />
+    <LINK type="text/css" rel="stylesheet" href="/struts2-demo-web-1.0-SNAPSHOT/services//?stylesheet=1"><meta http-equiv=content-type content="text/html; charset=UTF-8"><script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/script.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="/struts2-demo-web-1.0-SNAPSHOT/">AppFuse</a>
+                <div class="nav-collapse collapse">
+<ul class="nav">
+    
+           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/mainMenu" title="主菜单" >主菜单</a>
+    
+          </li>
+            
+           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/editProfile" title="编辑信息" >编辑信息</a>
+    
+          </li>
+            
+           
+                                                                                                                                                                                                                     
+        <li class="dropdown">
+          <a href="#" title="系统管理"
+                                       class="dropdown-toggle" data-toggle="dropdown">系统管理</a>
+    
+                      <ul class="dropdown-menu">
+        
+                                       
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/users" title="查看用户" >查看用户</a>
+    
+          </li>
+                                           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/activeUsers" title="在线用户" >在线用户</a>
+    
+          </li>
+                                           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/reload" title="重载选项" >重载选项</a>
+    
+          </li>
+                                           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/uploadFile" title="上传文件" >上传文件</a>
+    
+          </li>
+            </ul>
+                    
+                  </li>
+              
+           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/logout" title="退出" >退出</a>
+    
+          </li>
+            </ul>
+</div>
+<div id="switchLocale"><a href="/struts2-demo-web-1.0-SNAPSHOT/?locale=en">
+                        AppFuse in English</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <span class="heading">Available SOAP services:</span><br/><table cellpadding="1" cellspacing="1" border="1" width="100%"><tr><td><span class="porttypename">UserService</span><ul><li>getUser</li><li>getUsers</li><li>saveUser</li><li>removeUser</li><li>getUserByUsername</li></ul></td><td><span class="field">Endpoint address:</span> <span class="value">http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/services/UserService</span><br/><span class="field">WSDL :</span> <a href="http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/services/UserService?wsdl">{http://impl.service.appfuse.org/}UserService</a><br/><span class="field">Target namespace:</span> <span class="value">http://impl.service.appfuse.org/</span></td></tr></table><br/><br/><span class="heading">Available RESTful services:</span><br/><table cellpadding="1" cellspacing="1" border="1" width="100%"><tr><td><span class="field">Endpoint address:</span> <span class="value">http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/services/api</span><br/><span class="field">WADL :</span> <a href="http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/services/api?_wadl">http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/services/api?_wadl</a></td></tr></table></div>
+    </div>
+
+    <div id="footer">
+        <span class="left">Version 1.0-SNAPSHOT
+            | 当前用户: admin</span>
+        <span class="right">
+            &copy; 2012<a href="http://raibledesigns.com">Your Company Here</a>
+        </span>
+    </div>
+</body>
+</html>

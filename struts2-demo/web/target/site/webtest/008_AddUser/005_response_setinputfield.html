@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html lang="en">
+  <head>
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="/struts2-demo-web-1.0-SNAPSHOT/images/favicon.ico"/>
+    <title>
+      用户设置 | AppFuse
+    </title>
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-2.2.1.min.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-responsive-2.2.1.min.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/style.css"/>
+    <meta name="menu" content="UserMenu"/>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/jquery-1.8.2.min.js">
+    </script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/bootstrap-2.2.1.min.js">
+    </script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/plugins/jquery.cookie.js">
+    </script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/script.js">
+    </script>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+            <span class="icon-bar">
+            </span>
+          </button>
+          <a class="brand" href="/struts2-demo-web-1.0-SNAPSHOT/">
+            AppFuse
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="/struts2-demo-web-1.0-SNAPSHOT/mainMenu" title="主菜单">
+                  主菜单
+                </a>
+              </li>
+              <li class="active">
+                <a href="/struts2-demo-web-1.0-SNAPSHOT/editProfile" title="编辑信息">
+                  编辑信息
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="#" title="系统管理" class="dropdown-toggle" data-toggle="dropdown">
+                  系统管理
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="">
+                    <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/users" title="查看用户">
+                      查看用户
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/activeUsers" title="在线用户">
+                      在线用户
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/reload" title="重载选项">
+                      重载选项
+                    </a>
+                  </li>
+                  <li class="">
+                    <a href="/struts2-demo-web-1.0-SNAPSHOT/uploadFile" title="上传文件">
+                      上传文件
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="/struts2-demo-web-1.0-SNAPSHOT/logout" title="退出">
+                  退出
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="switchLocale">
+            <a href="/struts2-demo-web-1.0-SNAPSHOT/?locale=en">
+              
+                        AppFuse in English
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <script type="text/javascript">
+//<![CDATA[
+var msgDelConfirm =
+   "Are you sure you want to delete this user?";
+
+//]]>
+        </script>
+        <div class="span2">
+          <h2>
+            用户简要信息
+          </h2>
+          <p>
+            您可以按如下表格，更新用户的信息。
+          </p>
+        </div>
+        <div class="span7">
+          <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/struts/css_xhtml/validation.js">
+          </script>
+          <form id="saveUser" name="userForm" onsubmit="return validateForm_saveUser();" action="/struts2-demo-web-1.0-SNAPSHOT/saveUser" method="post" class="well form-horizontal" autocomplete="off" onreset="clearErrorMessages(this);clearErrorLabels(this);">
+            <input type="hidden" name="user.id" value="" id="saveUser_user_id"/>
+            <input type="hidden" name="user.version" value="" id="saveUser_user_version"/>
+            <input type="hidden" name="from" value="list"/>
+            <input type="hidden" name="encryptPass" value="true"/>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_username">
+                <span class="required">
+                  *
+                </span>
+                        用户名:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.username" value="newuser" id="saveUser_user_username"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_password">
+                <span class="required">
+                  *
+                </span>
+                        密码:
+
+              </label>
+              <div class="controls">
+                <input type="password" name="user.password" value="test" id="saveUser_user_password" onchange="passwordChanged(this)"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_confirmPassword">
+                <span class="required">
+                  *
+                </span>
+                        确认密码:
+
+              </label>
+              <div class="controls">
+                <input type="password" name="user.confirmPassword" value="test" id="saveUser_user_confirmPassword" onchange="passwordChanged(this)"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_passwordHint">
+                <span class="required">
+                  *
+                </span>
+                        密码提示:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.passwordHint" value="" id="saveUser_user_passwordHint"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_firstName">
+                <span class="required">
+                  *
+                </span>
+                        名:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.firstName" value="" id="saveUser_user_firstName"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_lastName">
+                <span class="required">
+                  *
+                </span>
+                        姓:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.lastName" value="" id="saveUser_user_lastName"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_email">
+                <span class="required">
+                  *
+                </span>
+                        E-Mail:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.email" value="" id="saveUser_user_email"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_phoneNumber">
+                        电话:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.phoneNumber" value="" id="saveUser_user_phoneNumber"/>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label" for="saveUser_user_website">
+                <span class="required">
+                  *
+                </span>
+                        网址:
+
+              </label>
+              <div class="controls">
+                <input type="text" name="user.website" value="" id="saveUser_user_website"/>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend class="accordion-heading">
+                <a data-toggle="collapse" href="#collapse-address">
+                  地址
+                </a>
+              </legend>
+              <div id="collapse-address" class="accordion-body collapse">
+                <fieldset class="control-group">
+                  <label class="control-label" for="saveUser_user_address_address">
+                            地址:
+
+                  </label>
+                  <div class="controls">
+                    <input type="text" name="user.address.address" value="" id="saveUser_user_address_address"/>
+                  </div>
+                </fieldset>
+                <fieldset class="control-group">
+                  <label class="control-label" for="saveUser_user_address_city">
+                            城市:
+
+                  </label>
+                  <div class="controls">
+                    <input type="text" name="user.address.city" value="" id="saveUser_user_address_city"/>
+                  </div>
+                </fieldset>
+                <fieldset class="control-group">
+                  <label class="control-label" for="saveUser_user_address_province">
+                     州省:
+
+                  </label>
+                  <div class="controls">
+                    <input type="text" name="user.address.province" value="" id="saveUser_user_address_province"/>
+                  </div>
+                </fieldset>
+                <fieldset class="control-group">
+                  <label class="control-label" for="saveUser_user_address_postalCode">
+                            邮编:
+
+                  </label>
+                  <div class="controls">
+                    <input type="text" name="user.address.postalCode" value="" id="saveUser_user_address_postalCode"/>
+                  </div>
+                </fieldset>
+                <fieldset class="control-group">
+                  <label for="user.address.country">
+                    
+                        国家
+                  </label>
+                  <div class="controls">
+                    <select name="user.address.country" id="user.address.country" class="select">
+                      <option value="" selected="selected"/>
+                      <option value="AL">
+                        阿尔巴尼亚
+                      </option>
+                      <option value="DZ">
+                        阿尔及利亚
+                      </option>
+                      <option value="AR">
+                        阿根廷
+                      </option>
+                      <option value="AE">
+                        阿拉伯联合酋长国
+                      </option>
+                      <option value="OM">
+                        阿曼
+                      </option>
+                      <option value="EG">
+                        埃及
+                      </option>
+                      <option value="IE">
+                        爱尔兰
+                      </option>
+                      <option value="EE">
+                        爱沙尼亚
+                      </option>
+                      <option value="AT">
+                        奥地利
+                      </option>
+                      <option value="AU">
+                        澳大利亚
+                      </option>
+                      <option value="PY">
+                        巴拉圭
+                      </option>
+                      <option value="BH">
+                        巴林
+                      </option>
+                      <option value="PA">
+                        巴拿马
+                      </option>
+                      <option value="BR">
+                        巴西
+                      </option>
+                      <option value="BY">
+                        白俄罗斯
+                      </option>
+                      <option value="BG">
+                        保加利亚
+                      </option>
+                      <option value="BE">
+                        比利时
+                      </option>
+                      <option value="IS">
+                        冰岛
+                      </option>
+                      <option value="BO">
+                        玻利维亚
+                      </option>
+                      <option value="PR">
+                        波多黎哥
+                      </option>
+                      <option value="PL">
+                        波兰
+                      </option>
+                      <option value="BA">
+                        波斯尼亚和黑山共和国
+                      </option>
+                      <option value="DK">
+                        丹麦
+                      </option>
+                      <option value="DE">
+                        德国
+                      </option>
+                      <option value="DO">
+                        多米尼加共和国
+                      </option>
+                      <option value="RU">
+                        俄罗斯
+                      </option>
+                      <option value="EC">
+                        厄瓜多尔
+                      </option>
+                      <option value="FR">
+                        法国
+                      </option>
+                      <option value="PH">
+                        菲律宾
+                      </option>
+                      <option value="FI">
+                        芬兰
+                      </option>
+                      <option value="CO">
+                        哥伦比亚
+                      </option>
+                      <option value="CR">
+                        哥斯达黎加
+                      </option>
+                      <option value="KR">
+                        韩国
+                      </option>
+                      <option value="NL">
+                        荷兰
+                      </option>
+                      <option value="ME">
+                        黑山
+                      </option>
+                      <option value="HN">
+                        洪都拉斯
+                      </option>
+                      <option value="CA">
+                        加拿大
+                      </option>
+                      <option value="CZ">
+                        捷克共和国
+                      </option>
+                      <option value="QA">
+                        卡塔尔
+                      </option>
+                      <option value="KW">
+                        科威特
+                      </option>
+                      <option value="HR">
+                        克罗地亚
+                      </option>
+                      <option value="LV">
+                        拉脱维亚
+                      </option>
+                      <option value="LB">
+                        黎巴嫩
+                      </option>
+                      <option value="LY">
+                        利比亚
+                      </option>
+                      <option value="LT">
+                        立陶宛
+                      </option>
+                      <option value="LU">
+                        卢森堡
+                      </option>
+                      <option value="RO">
+                        罗马尼亚
+                      </option>
+                      <option value="MT">
+                        马耳他
+                      </option>
+                      <option value="MY">
+                        马来西亚
+                      </option>
+                      <option value="MK">
+                        马其顿王国
+                      </option>
+                      <option value="US">
+                        美国
+                      </option>
+                      <option value="PE">
+                        秘鲁
+                      </option>
+                      <option value="MA">
+                        摩洛哥
+                      </option>
+                      <option value="MX">
+                        墨西哥
+                      </option>
+                      <option value="ZA">
+                        南非
+                      </option>
+                      <option value="NI">
+                        尼加拉瓜
+                      </option>
+                      <option value="NO">
+                        挪威
+                      </option>
+                      <option value="PT">
+                        葡萄牙
+                      </option>
+                      <option value="JP">
+                        日本
+                      </option>
+                      <option value="SE">
+                        瑞典
+                      </option>
+                      <option value="CH">
+                        瑞士
+                      </option>
+                      <option value="SV">
+                        萨尔瓦多
+                      </option>
+                      <option value="RS">
+                        塞尔维亚
+                      </option>
+                      <option value="CS">
+                        塞尔维亚及黑山
+                      </option>
+                      <option value="CY">
+                        塞浦路斯
+                      </option>
+                      <option value="SA">
+                        沙特阿拉伯
+                      </option>
+                      <option value="SK">
+                        斯洛伐克
+                      </option>
+                      <option value="SI">
+                        斯洛文尼亚
+                      </option>
+                      <option value="SD">
+                        苏丹
+                      </option>
+                      <option value="TW">
+                        台湾地区
+                      </option>
+                      <option value="TH">
+                        泰国
+                      </option>
+                      <option value="TN">
+                        突尼斯
+                      </option>
+                      <option value="TR">
+                        土耳其
+                      </option>
+                      <option value="GT">
+                        危地马拉
+                      </option>
+                      <option value="VE">
+                        委内瑞拉
+                      </option>
+                      <option value="UA">
+                        乌克兰
+                      </option>
+                      <option value="UY">
+                        乌拉圭
+                      </option>
+                      <option value="ES">
+                        西班牙
+                      </option>
+                      <option value="GR">
+                        希腊
+                      </option>
+                      <option value="HK">
+                        香港
+                      </option>
+                      <option value="SG">
+                        新加坡
+                      </option>
+                      <option value="NZ">
+                        新西兰
+                      </option>
+                      <option value="HU">
+                        匈牙利
+                      </option>
+                      <option value="SY">
+                        叙利亚
+                      </option>
+                      <option value="YE">
+                        也门
+                      </option>
+                      <option value="IQ">
+                        伊拉克
+                      </option>
+                      <option value="IL">
+                        以色列
+                      </option>
+                      <option value="IT">
+                        意大利
+                      </option>
+                      <option value="IN">
+                        印度
+                      </option>
+                      <option value="ID">
+                        印度尼西亚
+                      </option>
+                      <option value="GB">
+                        英国
+                      </option>
+                      <option value="JO">
+                        约旦
+                      </option>
+                      <option value="VN">
+                        越南
+                      </option>
+                      <option value="CL">
+                        智利
+                      </option>
+                      <option value="CN">
+                        中国
+                      </option>
+                    </select>
+                  </div>
+                </fieldset>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label class="control-label">
+                帐户设置
+              </label>
+              <div class="controls">
+                <label class="checkbox inline">
+                  <input type="checkbox" name="user.enabled" value="true" id="user.enabled"/>
+                  <input type="hidden" id="__checkbox_user.enabled" name="__checkbox_user.enabled" value="true"/>
+                  使能
+                </label>
+                <label class="checkbox inline">
+                  <input type="checkbox" name="user.accountExpired" value="true" id="user.accountExpired"/>
+                  <input type="hidden" id="__checkbox_user.accountExpired" name="__checkbox_user.accountExpired" value="true"/>
+                  到期
+                </label>
+                <label class="checkbox inline">
+                  <input type="checkbox" name="user.accountLocked" value="true" id="user.accountLocked"/>
+                  <input type="hidden" id="__checkbox_user.accountLocked" name="__checkbox_user.accountLocked" value="true"/>
+                  锁着
+                </label>
+                <br/>
+                <label class="checkbox inline">
+                  <input type="checkbox" name="user.credentialsExpired" value="true" id="user.credentialsExpired"/>
+                  <input type="hidden" id="__checkbox_user.credentialsExpired" name="__checkbox_user.credentialsExpired" value="true"/>
+                  密码到期了
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="control-group">
+              <label for="userRoles" class="control-label">
+                分配角色
+              </label>
+              <div class="controls">
+                <select id="userRoles" name="userRoles" multiple="true">
+                  <option value="ROLE_USER" selected="">
+                    ROLE_USER
+                  </option>
+                  <option value="ROLE_ADMIN">
+                    ROLE_ADMIN
+                  </option>
+                </select>
+              </div>
+            </fieldset>
+            <div id="actions" class="form-actions">
+              <button type="submit" id="saveUser_button_save" name="method:save" value="保存" class="btn btn-primary">
+                <i class="icon-ok icon-white"/>
+                
+                保存
+
+              </button>
+              <button type="submit" id="saveUser_button_cancel" name="method:cancel" value="取消" class="btn">
+                <i class="icon-remove"/>
+                
+                取消
+
+              </button>
+            </div>
+            <input name="encryptPass" type="hidden" id="encryptPass" value="true"/>
+            <input name="encryptPass" type="hidden" id="encryptPass" value="true"/>
+          </form>
+          <script type="text/javascript">
+//<![CDATA[
+
+    function validateForm_saveUser() {
+        form = document.getElementById("saveUser");
+        clearErrorMessages(form);
+        clearErrorLabels(form);
+
+        var errors = false;
+        var continueValidation = true;
+
+        return !errors;
+    }
+
+//]]>
+          </script>
+        </div>
+        <script type="text/javascript">
+//<![CDATA[
+
+    $(document).ready(function() {
+        $("input[type='text']:visible:enabled:first", document.forms['userForm']).focus();
+    });
+
+//]]>
+        </script>
+      </div>
+    </div>
+    <div id="footer">
+      <span class="left">
+        Version 1.0-SNAPSHOT
+            | 当前用户: admin
+      </span>
+      <span class="right">
+        © 2012
+        <a href="http://raibledesigns.com">
+          Your Company Here
+        </a>
+      </span>
+    </div>
+    <script type="text/javascript">
+//<![CDATA[
+
+    function passwordChanged(passwordField) {
+        if (passwordField.name == "user.password") {
+            var origPassword = "";
+        } else if (passwordField.name == "user.confirmPassword") {
+            var origPassword = "";
+        }
+
+        if (passwordField.value != origPassword) {
+            createFormElement("input", "hidden", "encryptPass", "encryptPass",
+                    "true", passwordField.form);
+        }
+    }
+
+//]]>
+    </script>
+  </body>
+</html>

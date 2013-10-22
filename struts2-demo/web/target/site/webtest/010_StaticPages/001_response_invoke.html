@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/struts2-demo-web-1.0-SNAPSHOT/images/favicon.ico"/>
+    <title>登录 | AppFuse</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-2.2.1.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-responsive-2.2.1.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/style.css" />
+    <meta name="menu" content="Login"/><script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/script.js"></script>
+</head>
+<body id="login">
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="/struts2-demo-web-1.0-SNAPSHOT/">AppFuse</a>
+                <div class="nav-collapse collapse">
+<ul class="nav">
+    <li class="active">
+            <a href="/struts2-demo-web-1.0-SNAPSHOT/login">登录</a>
+        </li>
+    </ul>
+</div>
+<div id="switchLocale"><a href="/struts2-demo-web-1.0-SNAPSHOT/?locale=en">
+                        AppFuse in English</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <form method="post" id="loginForm" action="/struts2-demo-web-1.0-SNAPSHOT/j_security_check"
+    onsubmit="saveUsername(this);return validateForm(this)" class="form-signin" autocomplete="off">
+    <h2 class="form-signin-heading">
+        登录</h2>
+<input type="text" name="j_username" id="j_username" class="input-block-level"
+           placeholder="用户名" required tabindex="1">
+    <input type="password" class="input-block-level" name="j_password" id="j_password" tabindex="2"
+           placeholder="密码" required>
+
+<label class="checkbox" for="rememberMe">
+        <input type="checkbox" class="checkbox" name="_spring_security_remember_me" id="rememberMe" tabindex="3"/>
+        让系统记住我</label>
+<button type="submit" class="btn btn-large btn-primary" name="login" tabindex="4">
+        登录</button>
+</form>
+
+<p>
+    不是注册用户? <a href="/struts2-demo-web-1.0-SNAPSHOT/signup">申请</a> 一个帐号。</p>
+
+<p>忘记了密码?  让系统将 <a href="?" onmouseover="window.status='系统发送密码提示。'; return true" onmouseout="window.status=''; return true" title="系统发送密码提示。" onclick="passwordHint(); return false">密码提示信息已e-mail形式发送给您</a>。</p></div>
+    </div>
+
+    <div id="footer">
+        <span class="left">Version 1.0-SNAPSHOT</span>
+        <span class="right">
+            &copy; 2012<a href="http://raibledesigns.com">Your Company Here</a>
+        </span>
+    </div>
+<script type="text/javascript">
+    if ($.cookie("username") != null && $.cookie("username") != "") {
+        $("#j_username").val($.cookie("username"));
+        $("#j_password").focus();
+    } else {
+        $("#j_username").focus();
+    }
+    
+    function saveUsername(theForm) {
+        $.cookie("username",theForm.j_username.value, { expires: 30, path: "/struts2-demo-web-1.0-SNAPSHOT/"});
+    }
+    
+    function validateForm(form) {                                                               
+        var valid = validateRequired(form);
+        if (valid == false) {
+            $(".control-group").addClass('error');
+        }
+        return valid;
+    }
+
+    function passwordHint() {
+        if ($("#j_username").val().length == 0) {
+            alert("用户名 为必填项。");
+            $("#j_username").focus();
+        } else {
+            location.href="/struts2-demo-web-1.0-SNAPSHOT/passwordHint?username=" + $("#j_username").val();
+        }
+    }
+    
+    function required () { 
+        this.aa = new Array("j_username", "用户名 为必填项。", new Function ("varName", " return this[varName];"));
+        this.ab = new Array("j_password", "密码 为必填项。", new Function ("varName", " return this[varName];"));
+    }
+</script></body>
+</html>

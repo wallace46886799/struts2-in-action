@@ -1,0 +1,15 @@
+#;Method;URL;Response code;Response Message;Content Type;Duration
+1;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT;302;Found;;4
+2;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/;302;Found;;3
+3;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/mainMenu;302;Found;;6
+4;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/login;200;OK;text/html;39
+5;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/jquery-1.8.2.min.js;200;OK;application/javascript;37
+6;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-2.2.1.min.css;200;OK;text/css;12
+7;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-responsive-2.2.1.min.css;200;OK;text/css;11
+8;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/styles/style.css;200;OK;text/css;9
+9;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/bootstrap-2.2.1.min.js;200;OK;application/javascript;11
+10;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/plugins/jquery.cookie.js;200;OK;application/javascript;12
+11;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/scripts/script.js;200;OK;application/javascript;9
+12;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/passwordHint?username=admin;302;Found;text/html;2263
+13;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/mainMenu;302;Found;;14
+14;GET;http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/login;200;OK;text/html;107

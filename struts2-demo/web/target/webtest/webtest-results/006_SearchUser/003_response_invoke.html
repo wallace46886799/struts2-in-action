@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-store"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/struts2-demo-web-1.0-SNAPSHOT/images/favicon.ico"/>
+    <title>用户列表 | AppFuse</title>
+
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-2.2.1.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/lib/bootstrap-responsive-2.2.1.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="/struts2-demo-web-1.0-SNAPSHOT/styles/style.css" />
+    <meta name="menu" content="AdminMenu"/><script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/bootstrap-2.2.1.min.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/lib/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/struts2-demo-web-1.0-SNAPSHOT/scripts/script.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="/struts2-demo-web-1.0-SNAPSHOT/">AppFuse</a>
+                <div class="nav-collapse collapse">
+<ul class="nav">
+    
+           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/mainMenu" title="主菜单" >主菜单</a>
+    
+          </li>
+            
+           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/editProfile" title="编辑信息" >编辑信息</a>
+    
+          </li>
+            
+           
+                                                                                                                                                                                                                     
+        <li class="dropdown active">
+          <a href="#" title="系统管理"
+                                       class="dropdown-toggle" data-toggle="dropdown">系统管理</a>
+    
+                      <ul class="dropdown-menu">
+        
+                                       
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/users" title="查看用户" >查看用户</a>
+    
+          </li>
+                                           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/activeUsers" title="在线用户" >在线用户</a>
+    
+          </li>
+                                           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/admin/reload" title="重载选项" >重载选项</a>
+    
+          </li>
+                                           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/uploadFile" title="上传文件" >上传文件</a>
+    
+          </li>
+            </ul>
+                    
+                  </li>
+              
+           
+                <li class="">
+        <a href="/struts2-demo-web-1.0-SNAPSHOT/logout" title="退出" >退出</a>
+    
+          </li>
+            </ul>
+</div>
+<div id="switchLocale"><a href="/struts2-demo-web-1.0-SNAPSHOT/?locale=en">
+                        AppFuse in English</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span10">
+    <h2>在线用户</h2>
+
+    <form method="get" action="/struts2-demo-web-1.0-SNAPSHOT/admin/users" id="searchForm" class="form-search">
+    <div id="search" class="input-append">
+        <input type="text" size="20" name="q" id="query" value=""
+               placeholder="Enter search terms..." class="input-medium search-query"/>
+        <button id="button.search" class="btn" type="submit">
+            <i class="icon-search"></i>
+            搜索</button>
+    </div>
+    </form>
+
+    <div id="actions" class="form-actions">
+        <a class="btn btn-primary" href="/struts2-demo-web-1.0-SNAPSHOT/editUser?method=Add&from=list" >
+            <i class="icon-plus icon-white"></i> 添加</a>
+        <a class="btn" href="/struts2-demo-web-1.0-SNAPSHOT/mainMenu">
+            <i class="icon-ok"></i> 做</a>
+    </div>
+
+    <span class="pagebanner">共找到3条users记录，显示所有users记录。</span>
+<table id="users" cellpadding="0" class="table table-condensed table-striped table-hover" cellspacing="0">
+<thead>
+<tr>
+<th class="sortable sorted order1">
+<a href="?d-149542-s=0&amp;d-149542-o=1">用户名</a></th>
+<th class="sortable">
+<a href="?d-149542-s=1&amp;d-149542-o=2">全名</a></th>
+<th class="sortable">
+<a href="?d-149542-s=2&amp;d-149542-o=2">E-Mail</a></th>
+<th class="sortable">
+<a href="?d-149542-s=3&amp;d-149542-o=2">使能</a></th></tr></thead>
+<tbody>
+<tr class="odd">
+<td style="width: 25%">
+<a href="/struts2-demo-web-1.0-SNAPSHOT/editUser?id=-2&amp;from=list">admin</a></td>
+<td style="width: 34%">Matt Raible</td>
+<td style="width: 25%"><a href="mailto:matt@raibledesigns.com">matt@raibledesigns.com</a></td>
+<td style="width: 16%; padding-left: 15px"><input type="checkbox" disabled="disabled" checked="checked"/>
+        </td></tr>
+<tr class="even">
+<td style="width: 25%">
+<a href="/struts2-demo-web-1.0-SNAPSHOT/editUser?id=1&amp;from=list">signup-user</a></td>
+<td style="width: 34%">Test Name</td>
+<td style="width: 25%"><a href="mailto:signup-user@raibledesigns.com">signup-user@raibledesigns.com</a></td>
+<td style="width: 16%; padding-left: 15px"><input type="checkbox" disabled="disabled" checked="checked"/>
+        </td></tr>
+<tr class="odd">
+<td style="width: 25%">
+<a href="/struts2-demo-web-1.0-SNAPSHOT/editUser?id=-1&amp;from=list">user</a></td>
+<td style="width: 34%">Tomcat User</td>
+<td style="width: 25%"><a href="mailto:matt_raible@yahoo.com">matt_raible@yahoo.com</a></td>
+<td style="width: 16%; padding-left: 15px"><input type="checkbox" disabled="disabled" checked="checked"/>
+        </td></tr></tbody></table><div class="exportlinks">导出选项：
+<a href="?6578706f7274=1&amp;d-149542-e=1"><span class="export csv">CSV </span></a>|
+<a href="?6578706f7274=1&amp;d-149542-e=2"><span class="export excel">Excel </span></a>|
+<a href="?6578706f7274=1&amp;d-149542-e=3"><span class="export xml">XML </span></a>|
+<a href="?6578706f7274=1&amp;d-149542-e=5"><span class="export pdf">PDF </span></a></div></div><div class="span2">
+                
+        
+      <ul class="nav nav-list">
+           <li class="nav-header">系统管理</li>                        <li class="active"><a href="/struts2-demo-web-1.0-SNAPSHOT/admin/users" title="查看用户" >查看用户</a></li>
+                                <li ><a href="/struts2-demo-web-1.0-SNAPSHOT/admin/activeUsers" title="在线用户" >在线用户</a></li>
+                                <li ><a href="/struts2-demo-web-1.0-SNAPSHOT/admin/reload" title="重载选项" >重载选项</a></li>
+                                <li ><a href="/struts2-demo-web-1.0-SNAPSHOT/uploadFile" title="上传文件" >上传文件</a></li>
+                    </ul>
+  </div>
+            </div>
+    </div>
+
+    <div id="footer">
+        <span class="left">Version 1.0-SNAPSHOT
+            | 当前用户: admin</span>
+        <span class="right">
+            &copy; 2012<a href="http://raibledesigns.com">Your Company Here</a>
+        </span>
+    </div>
+</body>
+</html>

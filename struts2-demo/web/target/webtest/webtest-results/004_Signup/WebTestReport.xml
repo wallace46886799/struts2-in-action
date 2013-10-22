@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<summary Implementation-Title="Canoo Webtest" Implementation-Version="development">
+    <testresult endtime="Tue Oct 22 22:13:01 CST 2013"
+        location="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml:165: "
+        starttime="Tue Oct 22 22:12:52 CST 2013" successful="yes" testspecname="signup">
+        <config>
+            <parameter name="port" value="8081"/>
+            <parameter name="protocol" value="http"/>
+            <parameter name="host" value="localhost"/>
+            <parameter name="resultpath" value="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\target\webtest\webtest-results"/>
+            <parameter name="saveprefix" value="response"/>
+            <parameter name="basepath" value="struts2-demo-web-1.0-SNAPSHOT"/>
+            <parameter name="resultfile" value="WebTestReport.xml"/>
+            <parameter name="haltonerror" value="no"/>
+            <parameter name="browser" value="IE6"/>
+            <parameter name="saveresponse" value="yes"/>
+            <parameter name="haltonfailure" value="no"/>
+            <parameter name="autorefresh" value="false"/>
+            <parameter name="timeout" value="300"/>
+            <parameter name="showhtmlparseroutput" value="no"/>
+        </config>
+        <results>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="168" description="click signup link" duration="4928" result="completed" taskName="invoke">
+                <parameter name="-> complete url" value="http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/signup"/>
+                <parameter name="url" value="/signup"/>
+                <resultFile name="001_response_invoke.html"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="169" description="view signup title" duration="1" result="completed" taskName="verifytitle">
+                <parameter name="regex" value="true"/>
+                <parameter name="text" value=".*注册.*"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="171" description="set username" duration="205" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.username"/>
+                <parameter name="value" value="signup-user"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="172" description="set password" duration="92" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.password"/>
+                <parameter name="value" value="test"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="173" description="set confirmPassword" duration="69" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.confirmPassword"/>
+                <parameter name="value" value="test"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="174" description="set firstName" duration="72" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.firstName"/>
+                <parameter name="value" value="Test"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="175" description="set lastName" duration="70" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.lastName"/>
+                <parameter name="value" value="Name"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="176" description="set city" duration="134" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.address.city"/>
+                <parameter name="value" value="Denver"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="177" description="set state" duration="52" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.address.province"/>
+                <parameter name="value" value="CO"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="178" description="select country" duration="32" result="completed" taskName="setselectfield">
+                <parameter name="name" value="user.address.country"/>
+                <parameter name="value" value="US"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="179" description="set postalCode" duration="125" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.address.postalCode"/>
+                <parameter name="value" value="80210"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="180" description="set email" duration="403" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.email"/>
+                <parameter name="value" value="signup-user@raibledesigns.com"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="181" description="set website" duration="331" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.website"/>
+                <parameter name="value" value="http://raibledesigns.com"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="182" description="set passwordHint" duration="69" result="completed" taskName="setinputfield">
+                <parameter name="name" value="user.passwordHint"/>
+                <parameter name="value" value="test"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="184" duration="1" result="completed" taskName="enableJavaScript">
+                <parameter name="enable" value="false"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="185" description="Click button 'Signup'" duration="1713" result="completed" taskName="clickbutton">
+                <parameter name="label" value="注册"/>
+                <resultFile name="002_response_clickbutton.html"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="187" description="view main menu" duration="33" result="completed" taskName="verifytitle">
+                <parameter name="regex" value="true"/>
+                <parameter name="text" value=".*主菜单.*"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="188" description="verify success message" duration="11" result="completed" taskName="verifytext">
+                <parameter name="text" value="注册成功，您可以开始使用系统。"/>
+            </step>
+        </results>
+    </testresult>
+</summary>

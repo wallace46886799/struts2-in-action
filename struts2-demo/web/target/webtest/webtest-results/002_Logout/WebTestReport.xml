@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<summary Implementation-Title="Canoo Webtest" Implementation-Version="development">
+    <testresult endtime="Tue Oct 22 22:12:48 CST 2013"
+        location="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml:37: "
+        starttime="Tue Oct 22 22:12:44 CST 2013" successful="yes" testspecname="logout">
+        <config>
+            <parameter name="port" value="8081"/>
+            <parameter name="protocol" value="http"/>
+            <parameter name="host" value="localhost"/>
+            <parameter name="resultpath" value="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\target\webtest\webtest-results"/>
+            <parameter name="saveprefix" value="response"/>
+            <parameter name="basepath" value="struts2-demo-web-1.0-SNAPSHOT"/>
+            <parameter name="resultfile" value="WebTestReport.xml"/>
+            <parameter name="haltonerror" value="no"/>
+            <parameter name="browser" value="IE6"/>
+            <parameter name="saveresponse" value="yes"/>
+            <parameter name="haltonfailure" value="no"/>
+            <parameter name="autorefresh" value="false"/>
+            <parameter name="timeout" value="300"/>
+            <parameter name="showhtmlparseroutput" value="no"/>
+        </config>
+        <results>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\login.xmlf"
+                _line="1" description="get Login Page" duration="1347" result="completed" taskName="invoke">
+                <parameter name="-> complete url" value="http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT"/>
+                <parameter name="url" value="/"/>
+                <resultFile name="001_response_invoke.html"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\login.xmlf"
+                _line="2" description="we should see the login title" duration="11"
+                result="completed" taskName="verifytitle">
+                <parameter name="regex" value="true"/>
+                <parameter name="text" value=".*登录.*"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\login.xmlf"
+                _line="3" description="set user name" duration="131" result="completed" taskName="setinputfield">
+                <parameter name="name" value="j_username"/>
+                <parameter name="value" value="admin"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\login.xmlf"
+                _line="4" description="set password" duration="134" result="completed" taskName="setinputfield">
+                <parameter name="name" value="j_password"/>
+                <parameter name="value" value="admin"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\login.xmlf"
+                _line="5" description="Click the submit button" duration="958" result="completed" taskName="clickbutton">
+                <parameter name="label" value="登录"/>
+                <resultFile name="002_response_clickbutton.html"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\login.xmlf"
+                _line="6" description="Home Page follows if login ok" duration="11"
+                result="completed" taskName="verifytitle">
+                <parameter name="regex" value="true"/>
+                <parameter name="text" value=".*主菜单.*"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="41" description="get Logout Page" duration="1191" result="completed" taskName="invoke">
+                <parameter name="-> complete url" value="http://localhost:8081/struts2-demo-web-1.0-SNAPSHOT/logout"/>
+                <parameter name="url" value="/logout"/>
+                <resultFile name="003_response_invoke.html"/>
+            </step>
+            <step
+                _filename="D:\Work\Frameworks\GitHub\struts2-in-action\struts2-demo\web\src\test\resources\web-tests.xml"
+                _line="42" description="we should see the login title" duration="6"
+                result="completed" taskName="verifytitle">
+                <parameter name="regex" value="true"/>
+                <parameter name="text" value=".*登录.*"/>
+            </step>
+        </results>
+    </testresult>
+</summary>
