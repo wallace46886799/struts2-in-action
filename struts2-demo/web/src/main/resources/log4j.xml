@@ -16,7 +16,7 @@
 
     <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
     <logger name="org.springframework.security">
-        <level value="ERROR"/>
+        <level value="INFO"/>
     </logger>
 
     <logger name="org.apache">
@@ -70,7 +70,7 @@
     </logger>
 
     <root>
-        <level value="DEBUG"/>
+        <level value="INFO"/>
         <appender-ref ref="CONSOLE"/>
     </root>
 
