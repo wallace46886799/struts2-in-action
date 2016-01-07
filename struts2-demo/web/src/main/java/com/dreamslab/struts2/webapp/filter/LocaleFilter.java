@@ -47,7 +47,8 @@ public class LocaleFilter extends OncePerRequestFilter {
                 preferredLocale = new Locale(locale);
             }
         }
-
+        
+        
         HttpSession session = request.getSession(false);
 
         if (session != null) {

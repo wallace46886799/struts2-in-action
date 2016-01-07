@@ -91,6 +91,14 @@
             <param-value>-1</param-value>
         </init-param>
     </filter>
+    
+    
+   <filter>
+        <filter-name>SnaSessionFilter</filter-name>
+        <filter-class>com.sna.session.SnaSessionFilter</filter-class>
+    </filter>
+    
+    
     <filter>
         <filter-name>securityFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -99,10 +107,19 @@
             <param-value>springSecurityFilterChain</param-value>
         </init-param>
     </filter>
+    
+    
+    
+    
+    
     <filter>
         <filter-name>sitemesh</filter-name>
         <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
     </filter>
+    
+    
+    
+    
     <filter>
         <filter-name>struts-prepare</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
@@ -145,6 +162,13 @@
     <filter-mapping>
         <filter-name>rewriteFilter</filter-name>
         <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>SnaSessionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
     </filter-mapping>
     <filter-mapping>
         <filter-name>securityFilter</filter-name>

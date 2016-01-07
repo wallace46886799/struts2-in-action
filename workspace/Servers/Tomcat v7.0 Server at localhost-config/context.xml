@@ -18,7 +18,7 @@
 
     <!-- Default set of monitored resources -->
     <WatchedResource>WEB-INF/web.xml</WatchedResource>
-
+	
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
     <Manager pathname="" />
@@ -29,5 +29,9 @@
     <!--
     <Valve className="org.apache.catalina.valves.CometConnectionManagerValve" />
     -->
+    
+  
+   <Resource auth="Container" driverClassName="com.ibm.db2.jcc.DB2Driver" maxActive="10" maxIdle="3" maxWait="5000" name="jdbc/mall" password="1qaz2wsx" type="javax.sql.DataSource" url="jdbc:db2://192.168.3.8:50000/testdb" username="db2admin"/>
+
 
 </Context>

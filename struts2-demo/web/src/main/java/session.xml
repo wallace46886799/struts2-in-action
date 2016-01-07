@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<cookies>
+	<cookie>
+		<key>cookie1</key>
+		<domain></domain>
+		<path>/</path>
+		<httponly/>
+		<encrypt/>
+		<attributes>
+			<attribute name="attr1"/>
+			<attribute name="attr3"/>
+		</attributes>
+	</cookie>
+	<cookie>
+		<key>cookie2</key>
+		<path>/</path>
+		<httponly/>
+		<encrypt/>
+		<attributes>
+			<attribute name="attr2"/>
+			<attribute name="b2"/>
+			<attribute name="c3"/>
+		</attributes>
+	</cookie>
+</cookies>
